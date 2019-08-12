@@ -1,4 +1,8 @@
-import { Component } from '@angular/core';
+import {Component} from '@angular/core';
+import * as goog from 'google-protobuf';
+
+declare function require(path: string): any;
+const proto = require('../assets/js/test_pb.js');
 
 @Component({
   selector: 'app-root',
@@ -6,5 +10,11 @@ import { Component } from '@angular/core';
   styleUrls: ['./app.component.scss']
 })
 export class AppComponent {
-  title = 'proto-example';
+  testProto = new proto.Thingy();
+
+  constructor() {
+    this.testProto.setId(123);
+    this.testProto.setName('Test proto');
+    this.testProto.setType(proto.ThingType.FIRST);
+  }
 }

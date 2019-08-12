@@ -2,6 +2,14 @@
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 8.0.0-rc.4.
 
+You will need to install the proto buffer compiler in order to compile the proto files into the generated language specific output:
+
+`brew install protobuf `
+
+To create the generated JavaScript file from the proto definitions run the following command:
+
+`protoc --proto_path=./protos/ --js_out=import_style=commonjs,binary:./src/assets/js ./protos/schemas.proto`
+
 ## Development server
 
 Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The app will automatically reload if you change any of the source files.

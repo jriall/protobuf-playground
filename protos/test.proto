@@ -1,0 +1,13 @@
+syntax = "proto3";
+
+enum ThingType {
+  UNDEFINED = 0;
+  FIRST = 1;
+  SECOND = 2;
+}
+
+message Thingy {
+  string name = 1;
+  int64 id = 2;
+  ThingType type = 3;
+}
